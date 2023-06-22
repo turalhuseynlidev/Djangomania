@@ -1,0 +1,29 @@
+{% extends 'core/base.html' %}
+
+{% block container %}
+
+  <div class="col-sm-6 offset-sm-3">
+  {% if category or tag %}
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+    </nav>
+    {% endif %}
+<div class="list-group">
+    <h1 class="text-primary">
+        TODO LIST ( {{ todos.count }} )
+      </h1>
+      {% if category %}
+    <h2>Kateqoriya : {{ category }}</h2>
+      {% elif tag %}
+    <h2>Kateqoriya : {{ tag }}</h2>
+    {% endif %}
+    {% for todo in todos %}
+    <a href="{{ todo.get_absolute_url }}" class="list-group-item list-group-item-action">{{ todo.title }}</a>
+    {% endfor %}
+  </div>
+  
+  <!-- <a href="/" class="btn btn-primary mt-2">Back</a> -->
+
+</div>
+{% endblock container %}

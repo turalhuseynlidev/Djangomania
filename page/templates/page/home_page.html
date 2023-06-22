@@ -1,0 +1,83 @@
+{% extends "core/base.html" %}
+{% block title %} Django {% endblock title %}
+{% block container-fluid %}
+<!-- CAROUSEL START -->
+{% include 'core/components/home_carousel.html' %}
+<!-- CONTENT END -->
+<!-- CAROUSEL END -->
+<!-- CONTENT START -->
+<div class="container-fluid mb-5">
+    <div class="row bg-dark p-4 border-bottom border-top">
+        {<div class="col-sm-8 offset-sm-2">
+            <div class="h-100 p-5 bg-light border rounded-3">
+                <h2 class="text-center display-1">Django</h2>
+                <p class="text-center">Or, keep it light and add a border for some added definition to the
+                    boundaries of your content. Be sure to look under the hood at the source HTML here as we've
+                    adjusted the alignment and sizing of both column's content for equal-height.</p>
+            </div>
+        </div>}
+    </div>
+    <!-- ABOUT US -->
+    <div class="row bg-dark text-light">
+        <div class="col-sm-6 ms-0 ps-0 ">
+            <img src="https://picsum.photos/id/70/600/250" alt="" class="w-100">
+        </div>
+        <div class="col-sm-6  d-flex justify-content-center align-items-center">
+            <div class="text-center ">
+                <h2 class="display-5">Haqqimizda</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, vitae.</p>
+                <p>Quas exercitationem ullam debitis non pariatur cumque corrupti praesentium dolorum.</p>
+            </div>
+        </div>
+    </div>
+    <!-- ABOUT US END  -->
+</div>
+{% endblock container-fluid %}
+{% block container %}
+<!-- ========== Gallery Start ========== -->
+<div class="container">
+    <!-- ========== Products Start ========== -->
+
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Gallery</h2>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-4 mb-2">
+            <div class="card">
+                <img src="https://picsum.photos/id/542/400/250" class="card-img-top" alt="...">
+                <div class="card-body ">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the card's content.</p>
+                    <a href="#" class="btn btn-primary me-md-2">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 mb-2">
+            <div class="card">
+                <img src="https://picsum.photos/id/239/400/250" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 mb-2">
+            <div class="card">
+                <img src="https://picsum.photos/id/238/400/250" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock container %}

@@ -1,0 +1,39 @@
+{% extends 'core/base.html' %}
+
+{% block container %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="{{ todo.category.get_absolute_url }}">{{ todo.category.title }}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{ todo.title }}</li>
+  </ol>
+</nav>
+<div class="card text-center">
+  
+    <div class="card-header">
+     Category: {{ todo.category }}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ todo.title }} - id:{{ todo.id }}</h5>
+      <p class="card-text">{{ todo.content }}.</p>
+    </div>
+    <div class="card-footer text-muted">
+      Created: {{ todo.created_at |date:"d/m/Y H:s" }}
+    </div>
+    <div class="card-footer text-muted">
+      Updated: {{ todo.updated_at|date:"d/m/Y H:s" }}
+    </div>
+    
+  </div>
+  <ul class="list-inline" >
+{% for tag in todo.tag.all %}
+    <li class="list-inline-item">
+      <a href="{{ tag.get_absolute_url }}"><span class="mt-2 badge rounded-pill bg-primary">{{ tag }}</span></a>
+    </li>
+    {% endfor %}
+  </ul>
+  <!-- <div class="text-center mt-2">
+  <button onclick="location.href='{{ todo.category.get_absolute_url }}'" type="button" class="btn btn-primary">Back</button>
+  </div> -->
+  
+{% endblock container %}
